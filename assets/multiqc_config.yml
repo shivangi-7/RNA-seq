@@ -1,0 +1,52 @@
+# Specify the modules to run
+run_modules:
+  - fastqc
+  - cutadapt
+  - star
+  - picard
+  - featureCounts
+  - qualimap
+  - rseqc
+
+# Set order for raw FASTQC, trimming stats and trimmed FASTQC
+module_order:
+  - fastqc:
+      name: "FastQC (raw)"
+      info: "This section of the report shows FastQC results before adapter trimming."
+      path_filters:
+        - "./fastqc/*.zip"
+  - cutadapt
+  - fastqc:
+      name: "FastQC (trimmed)"
+      info: "This section of the report shows FastQC results after adapter trimming."
+      path_filters:
+        - "./trimgalore/fastqc/*.zip"
+
+# Specifiy how to recognise files
+sp:
+  cutadapt:
+    fn: "*trimming_report.txt"
+
+  picard/markdups:
+    fn: "*.MarkDuplicates.metrics.txt"
+
+  rseqc/bam_stat:
+    fn: "*.bam_stat.txt"
+  rseqc/infer_experiment:
+    fn: "*.infer_experiment.txt"
+  rseqc/junction_annotation:
+    fn: "*.junction_annotation.log"
+  rseqc/read_distribution:
+    fn: "*.read_distribution.txt"
+
+# Hide duplicated columns
+table_columns_visible:
+  fastqc:
+    percent_duplicates: False
+
+# Clear files names
+extra_fn_clean_exts:
+  - "_val"
+  - ".markdup"
+  - "_R1"
+  - "_R2"

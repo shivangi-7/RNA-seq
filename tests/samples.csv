@@ -1,0 +1,7 @@
+sampleID,read1,read2
+HBR_Rep1,tests/HBR_Rep1_R1.fastq.gz,tests/HBR_Rep1_R2.fastq.gz
+HBR_Rep2,tests/HBR_Rep2_R1.fastq.gz,tests/HBR_Rep2_R2.fastq.gz
+HBR_Rep3,tests/HBR_Rep3_R1.fastq.gz,tests/HBR_Rep3_R2.fastq.gz
+UHR_Rep1,tests/UHR_Rep1_R1.fastq.gz,tests/UHR_Rep1_R2.fastq.gz
+UHR_Rep2,tests/UHR_Rep2_R1.fastq.gz,tests/UHR_Rep2_R2.fastq.gz
+UHR_Rep3,tests/UHR_Rep3_R1.fastq.gz,tests/UHR_Rep3_R2.fastq.gz
